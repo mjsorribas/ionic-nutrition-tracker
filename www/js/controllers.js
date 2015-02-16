@@ -9,11 +9,30 @@ angular.module('starter.controllers', [])
         }
     })
 
-    .controller('RecipesCtrl', function($scope, $stateParams, Recipes) {
+    .controller('RecipesCtrl', function ($scope, $stateParams, Recipes, $ionicModal) {
         $scope.recipes = Recipes.all();
         $scope.remove = function(recipe) {
             Recipes.remove(recipe);
-        }
+        };
+
+        $ionicModal.fromTemplateUrl('templates/recipe-new-modal.html', {
+            scope: $scope,
+            animation: 'slide-in-up'
+        }).then(function (modal) {
+            $scope.modal = modal;
+        });
+
+        $scope.openModal = function () {
+            $scope.modal.show();
+        };
+
+        $scope.closeModal = function () {
+            $scope.modal.hide();
+        };
+
+        $scope.$on('$destroy', function () {
+            $scope.modal.remove();
+        });
     })
 
     .controller('RecipeDetailCtrl', function($scope, $stateParams, Recipes) {

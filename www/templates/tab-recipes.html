@@ -1,4 +1,10 @@
 <ion-view view-title="Recipes">
+    <ion-nav-buttons side="secondary">
+        <button class="button button-clear button-positive" ng-click="openModal()">
+            New
+        </button>
+
+    </ion-nav-buttons>
     <ion-content>
         <ion-list>
             <ion-item ng-repeat="recipe in recipes" type="item-text-wrap" href="#/tab/recipe/{{recipe.id}}">
@@ -8,3 +14,6 @@
         </ion-list>
     </ion-content>
 </ion-view>
+
+
+

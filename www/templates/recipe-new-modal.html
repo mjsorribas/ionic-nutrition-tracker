@@ -1,0 +1,21 @@
+<ion-modal-view>
+    <ion-header-bar>
+        <h1 class="title">Add Recipe</h1>
+    </ion-header-bar>
+    <ion-content>
+
+        <div class="list">
+            <label class="item item-input">
+                <span class="input-label">Recipe Name</span>
+                <input type="text" ng-model="recipe.name">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Recipe</span>
+                <input type="text" ng-model="recipe.ingredients">
+            </label>
+        </div>
+
+        <button class="button button-full positive" ng-click="closeModal()">Done</button>
+    </ion-content>
+
+</ion-modal-view>
