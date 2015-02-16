@@ -1,0 +1,23 @@
+<!--
+This template loads for the 'tab.recipe-detail' state (app.js)
+'recipe' is a $scope variable created in the RecipesCtrl controller (controllers.js)
+The FriendsCtrl pulls data from the Recipes service (service.js)
+The Recipes service returns an array of recipe data
+-->
+<ion-view view-title="{{recipe.name}}">
+    <ion-content class="padding">
+
+        <!--<h3>{{recipe.name}}</h3>-->
+        <h4>Servings {{recipe.servings}}</h4>
+        <ul ng-repeat="ingredient in recipe.ingredients">
+            <li>{{ingredient.amount}} {{ingredient.ingred}}</li>
+        </ul>
+        <h4>Directions</h4>
+        <ul ng-repeat="direction in recipe.directions">
+            <li>{{direction.step}}</li>
+        </ul>
+
+        <h4>Nutrition Info</h4>
+
+    </ion-content>
+</ion-view>
